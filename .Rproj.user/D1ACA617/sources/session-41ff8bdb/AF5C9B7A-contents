@@ -1,0 +1,8 @@
+library(leaflet)
+library(tidyverse)
+
+m <- leaflet() %>%
+  addTiles()  # Adds the default tile layer (OpenStreetMap)
+
+m <- m %>%
+  setView(lng = -73.985, lat = 40.748, zoom = 12) 

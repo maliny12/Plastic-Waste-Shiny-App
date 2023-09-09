@@ -1,0 +1,26 @@
+{
+    "id": "88B0209A",
+    "path": "~/Desktop/Shiny_app/about.Rmd",
+    "project_path": "about.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1694228797458.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "12,0",
+        "scrollLine": "8"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1693126191,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1693126191,
+    "read_only": false,
+    "read_only_alternatives": []
+}

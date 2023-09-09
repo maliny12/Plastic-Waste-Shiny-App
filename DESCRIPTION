@@ -1,0 +1,8 @@
+Title: Assessment Plastic Solution
+Author: Maliny Po
+Data Source: https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-05-21#coast_vs_wastecsv
+Purpose : The app aims to make people more aware of this problem and encourage conversations around this issue, all in an interactive and fun way.
+Link: https://malinypo.shinyapps.io/Global_Waste/
+License: GPL-3
+DisplayMode: Showcase
+Type: Shiny

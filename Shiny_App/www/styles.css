@@ -1,0 +1,89 @@
+.shiny-image-output{
+   /*This is the specific image for this section*/
+      background-image:url("https://www.greenbiz.com/sites/default/files/styles/16_9_cropped/public/2023-01/Plastic_ROMAN%20DZIUBALO_Shutterstock.jpg?itok=iUWKSGSb");
+      margin: 0;
+      padding-top:100px;
+      padding-bottom: 100px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position:center center; /* Make the background fixed */
+      background-attachment: fixed; /* Make the background fixed */
+}
+
+#header_img.shiny-image-output {
+  height: 500;
+}
+
+
+.panel {
+  opacity: 0.9;
+}
+
+
+.nav-tabs>*:after{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 80%;
+  height: 1px;
+  content: '.';
+  padding:3px;
+  color: transparent;
+  background: #B9B9B9;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+  transition: 0.3s;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.nav-tabs>*:hover:after{
+  opacity: 0.4;
+  visibility: visible;
+  height: 80%;
+  z-index:999;
+  pointer-events: none;
+}
+
+
+
+
+.main-svg{
+  height: 100%;
+  width: 100%;
+}
+
+.hovertext>*  {
+  stroke-width: 2px !important;
+}
+
+.hovertext>*>*:first-child  {
+  font-weight: bold !important;
+}
+
+.about {
+  background-color: #e3e3e3;
+  border: 1px dashed grey;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.row {
+  padding: 5px;
+}
+
+h3 {
+  color: #006DAE;
+  font-size: 1.5em;
+}
+
+details > summary:first-of-type {
+    display: list-item;
+    counter-increment: list-item 0;
+    list-style: inside disclosure-closed;
+}

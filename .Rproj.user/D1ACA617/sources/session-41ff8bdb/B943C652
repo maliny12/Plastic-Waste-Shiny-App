@@ -1,0 +1,26 @@
+{
+    "id": "B943C652",
+    "path": "~/Desktop/Shiny_app/Shiny_App/Shiny_App.R",
+    "project_path": "Shiny_App/Shiny_App.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1694228736933.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "10,0",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1694229612,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1694229612784,
+    "read_only": false,
+    "read_only_alternatives": []
+}
