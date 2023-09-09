@@ -9,7 +9,7 @@ This is a **R Shiny** app for the ETC5523 Assessment 1.
 Plastic pollution is a big and growing issue that's harming oceans and wildlife. The app aims to make people more aware of this problem and encourage conversations around this issue, all in an interactive and fun way.
 
 The link to the app can be found at 
-[Global Waste](https://malinypo.shinyapps.io/Global_Plastic_Waste/)
+[Global Plastic Waste](https://malinypo.shinyapps.io/Global_Plastic_Waste/)
 
 Sessioninfo:
 
