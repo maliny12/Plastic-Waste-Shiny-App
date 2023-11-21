@@ -1,0 +1,53 @@
+```{r}
+install.packages("threejs")
+library(threejs)
+library(tidyverse)
+library(maps)
+library(broom)
+```
+
+```{r}
+################ Load Data ################
+mismanaged_vs_gdp <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-05-21/per-capita-mismanaged-plastic-waste-vs-gdp-per-capita.csv")
+
+
+
+mismanaged_gdp <- mismanaged_vs_gdp %>%
+  filter(Year == 2010) %>%
+  select(Entity, `Per capita mismanaged plastic waste (kilograms per person per day)`,
+         `GDP per capita, PPP (constant 2011 international $) (Rate)`) %>%
+  rename("value"= `Per capita mismanaged plastic waste (kilograms per person per day)`,
+         "region" = Entity,
+         "gpd" = `GDP per capita, PPP (constant 2011 international $) (Rate)`)
+
+
+map <- maps::map("world", fill=TRUE, plot=FALSE) %>%
+      maptools::pruneMap(xlim = c(20,180), ylim = c(-10, 70)) %>%
+      tidy()
+
+test_map <- left_join(map, mismanaged_gdp_10, "region")
+
+globejs(value=mismanaged_gdp$value, color = mismanaged_gdp$value, atmosphere=TRUE)
+
+
+# Create a 3D globe using threejs
+globe <- threejs::globejs(data = test_map, colorVar = "value", texture = NA, atmosphere = TRUE)
+globe
+
+
+
+```
+
+
+```{r}
+
+jpeg(earth, width=2048, height=1024, quality=100, bg=bgcolor, antialias="default")
+par(mar = c(0,0,0,0), pin = c(4,2), pty = "m",  xaxs = "i",
+    xaxt = "n",       xpd = FALSE,  yaxs = "i", bty = "n", yaxt = "n")
+plot(wrld_simpl, col="black", bg=bgcolor, border="cyan", ann=FALSE,
+     setParUsrBB=TRUE)
+dev.off()
+globejs(earth)
+shiny::runApp(system.file("examples/globe",package="threejs"))
+
+

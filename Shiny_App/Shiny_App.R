@@ -16,7 +16,6 @@ library(tidyverse)
 library(ggpattern)
 library(plotly) # For interactive plot
 library(sp) # For maptools package
-library(maptools) # For regional map
 library(broom) # For tidying the data
 library(shiny) # For R-Shiny
 library(mapproj) # For Coord_map() function
@@ -149,7 +148,7 @@ heatmap <- function(df, column_name, region) {
 
   # Create a heatmap using Plotly
   heatmap <- ggplot(sub_map, tooltip = "text") +
-    geom_polygon(color = "white",aes(x = long, y = lat,
+    geom_polygon(color = "white", size = 0.3, aes(x = long, y = lat,
                                      fill = value, group = group,
                                      text = paste(region, "<br>", value, legendTitle))) +
     scale_fill_continuous(low="lightpink", high="indianred", trans = "sqrt",
@@ -166,7 +165,8 @@ heatmap <- function(df, column_name, region) {
     coord_map()
 
 
-  heatmap_plotly <- ggplotly(heatmap, tooltip = "text")
+  heatmap_plotly <- ggplotly(heatmap, tooltip = "text") 
+  
 
   return(heatmap_plotly)
 
@@ -202,6 +202,35 @@ barchart <- function(coast_waste_no_NA, country_list) {
     layout(legend = list(orientation = "h"))
 
   return(barchart_plotly)
+
+}
+
+########## Top 5 bar chart function ############
+
+top5_barchart <- function (df, column_name, region){
+  
+  # Select only the data that the user has selected to view
+  plot_df <- df %>%
+    select(Entity, {{column_name}}) %>%
+    rename(value = {{column_name}}, region = Entity) %>%
+    arrange(-value) %>%
+    head(5)
+  
+  top5_barchart <- ggplot(plot_df,
+                          aes(x = value,
+                              y = region,
+                              fill = region,
+                              text = paste(region, "<br>", value, "tons"))) +
+      geom_col() +
+      theme(legend.position = "Top") +
+      labs(x = " ", y = "", title = "Top 5 contributors based on region.") +
+      theme_classic()
+  
+  top5_barchart_plotly <- ggplotly(top5_barchart, tooltip = "text") %>%
+    layout(legend = list(orientation = "h"))
+  
+  return(top5_barchart_plotly)
+  
 
 }
 
@@ -306,17 +335,28 @@ server <- function(input, output) {
     plot <- heatmap(df, column_name, region)  # Call your heatmap function
     plot
   })
-
-  # Output for barchart
+  
+  
+  # Output for heatmap
   output$bar_plot <- renderPlotly({
-    if (length(input$countries) > 0) {
-      country_list <- input$countries
-    } else {
-      country_list <- c("China", "Australia", "USA")
-    }
-    plot <- barchart(coast_waste_no_NA, country_list)  # Call your barchart function
+    column_name <- input$column_name  # Use appropriate input value
+    region <- input$region  # Use appropriate input value
+    plot <- top5_barchart(df, column_name, region)  # Call your heatmap function
     plot
   })
+  
+  
+  # Output for barchart
+  #output$bar_plot <- renderPlotly({
+  #  if (length(input$countries) > 0) {
+  #   country_list <- input$countries
+   # } else {
+  #    country_list <- c("China", "Australia", "USA")
+   # }
+   # plot <- barchart(coast_waste_no_NA, country_list)  # Call your barchart function
+    #plot
+  #})
+  
   
   # Output for Data Explorer Page
   output$header_img <- renderImage({
