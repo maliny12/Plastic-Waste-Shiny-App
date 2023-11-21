@@ -1,0 +1,5 @@
+"0",""
+"0",""
+"0","# Create a 3D globe using threejs"
+"0","globe <- threejs::globejs(data = test_map, colorVar = ""value"", texture = NA, atmosphere = TRUE)"
+"0","globe"

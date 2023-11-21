@@ -1,0 +1,28 @@
+{
+    "id": "D7DC0A4E",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1696726226640.0,
+    "source_on_save": false,
+    "relative_order": 9,
+    "properties": {
+        "id": "50804fa18ae04cdaaa518ac2389c5655",
+        "name": "WorldCountry",
+        "title": "WorldCountry",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 4749063944,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1696726226640,
+    "read_only": false,
+    "read_only_alternatives": []
+}

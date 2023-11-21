@@ -1,0 +1,26 @@
+{
+    "id": "4C883A9F",
+    "path": "~/Documents/Personal_Project/Shiny_app/test_map_function.R",
+    "project_path": "test_map_function.R",
+    "type": "r_source",
+    "hash": "3864936240",
+    "contents": "",
+    "dirty": false,
+    "created": 1696662712063.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "20,19",
+        "scrollLine": "32"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1696729058,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1696729058640,
+    "read_only": false,
+    "read_only_alternatives": []
+}
